@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Chell Makanan Ramah Tunarungu</title>
+  <style>
+    pbody {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 20px;
+      text-align: center;
+    }
+    h1, h2 {
+      color: #2e8b57;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .menu-item {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 200px;
+      padding: 10px;
+      transition: 0.3s;
+    }
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+    .menu-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .menu-item button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .video-section {
+      margin-top: 40px;
+    }
+    iframe {
+      width: 100%;
+      max-width: 500px;
+      height: 280px;
+      border-radius: 10px;
+    }
+    .sign-language-section {
+      margin-top: 40px;
+    }
+    .sign-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 200px); 
+      grid-template-rows: repeat(3, auto);
+      gap: 20px;
+      overflow-x: auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 15px;
+      justify-content: start;
+    }
+    .sign-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+    }
+    .sign-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1 id="warung">Menu Makanan Di Warung Chell</h1>
+  <p>Website ini membantu tunarungu memahami menu makanan dengan video visual.</p>
+
+  <div class="menu">
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gO0xTgBpkXmbnqSFIThdtwl9Q0-aDT7r7w&usqp=CAU" alt="Ayam Bakar">
+      <h3>Ayam Bakar</h3>
+      <button onclick="playVideo('https://www.youtube.com/embed/9NUWsxTpc8U')">Lihat Video</button>
+      <button onclick="showInfo('Ayam Bakar adalah hidangan khas Indonesia yang dimasak dengan bumbu rempah-rempah dan dipanggang.')">Info</button>
+      <button onclick="orderFood('Ayam Bakar')">Pesan</button>
+        </div>
+        <div class="menu-item">
+      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ9A10KUlGeToZoZq0tHKCfRF4JlKgZWstpADKoR5jyh15fg_2esALRvBPMaGy39lmiZ5eBgSg7_t--6zCQ8YAC8st3d64FW4Zm_wgeGhDh" alt="Nasi Goreng">
+      <h3>Nasi Goreng-mamamia</h3>
+      <button onclick="playVideo('https://www.youtube.com/embed/9NUWsxTpc8U')">Lihat Video</button>
+      <button onclick="showInfo('Siap-siap ketagihan dari suapan pertama!')">Info</button>
+      <button onclick="orderFood('Nasi Goreng')">Pesan</button>
+        </div>
+        <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlKiwW7n62oWyPjC5H-bxuW3ZwxcdZxNviANpAr1CHTRvmEeB1JfevreE&s=10" alt="Sate Ayam">
+      <h3>Sate Ayam</h3>
+      <button onclick="playVideo('https://www.youtube.com/embed/9NUWsxTpc8U')">Lihat Video</button>
+      <button onclick="showInfo('Sate Ayam adalah daging ayam yang ditusuk dan dipanggang dengan bumbu kacang.')">Info</button>
+      <button onclick="orderFood('Sate Ayam')">Pesan</button>
+        </div>
+        <div class="menu-item">
+      <img src="https://th.bing.com/th/id/OIP.9dxCrDfXoZbvHAuN1-QwcQHaJX?w=146&h=185&c=7&r=0&o=5&pid=1.7" alt="Bakso">
+      <h3>Bakso</h3>
+      <button onclick="playVideo('https://www.youtube.com/embed/9NUWsxTpc8U')">Lihat Video</button>
+      <button onclick="showInfo('Bakso adalah bola daging yang biasanya disajikan dengan kuah kaldu.')">Info</button>
+      <button onclick="orderFood('Bakso')">Pesan</button>
+        </div>
+        <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVFKVgR32QQBPw1mRIHoqAJqLV2zhbLiiUu4yipEOcFwblwyFvAx3ToYA1rtNj5_2QX5zv1DHbY_NOOtRYXq43h1OtHwF-WQTeAx_x6Z6NMg" alt="Mie Goreng">
+      <h3>Mie Goreng-Mamamia</h3>
+      <button onclick="playVideo('https://www.youtube.com/embed/9NUWsxTpc8U')">Lihat Video</button>
+      <button onclick="showInfo('Mie Goreng adalah mie yang digoreng dengan bumbu khas Indonesia.')">Info</button>
+      <button onclick="orderFood('Mie Goreng')">Pesan</button>
+        </div>
+      </div>
+
+      <div id="infoPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:300px; background:white; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.5); border-radius:10px; z-index:1000;">
+        <p id="infoText" style="color:#333;"></p>
+        <button onclick="closeInfo()" style="margin-top:10px; padding:8px 12px; background-color:#2e8b57; color:white; border:none; border-radius:5px; cursor:pointer;">Tutup</button>
+      </div>
+
+      <div id="orderNotification" style="display:none; position:fixed; bottom:20px; right:20px; background:#2e8b57; color:white; padding:15px; border-radius:5px; box-shadow:0 0 10px rgba(0,0,0,0.5); z-index:1000;">
+        <p>Pesanan berhasil! Silakan menunggu:v</p>
+      </div>
+
+      <script>
+        function showInfo(description) {
+          document.getElementById('infoText').innerText = description;
+          document.getElementById('infoPopup').style.display = 'block';
+        }
+
+        function closeInfo() {
+          document.getElementById('infoPopup').style.display = 'none';
+        }
+
+        function orderFood(foodName) {
+          alert('Anda telah memesan ' + foodName + '. Terima kasih!');
+          const notification = document.getElementById('orderNotification');
+          notification.style.display = 'block';
+          setTimeout(() => {
+        notification.style.display = 'none';
+          }, 3000);
+        }
+      </script>
+
+  <div class="video-section">
+    <h2 id="berkomunikasi">Tutorial Berkomunikasi</h2>
+    <iframe src="https://www.youtube.com/embed/rbCtDYfwjXE" allowfullscreen></iframe>
+  </div>
+
+  <div class="sign-language-section">
+    <h2 id="simbol">Simbol Bahasa Isyarat Sehari-hari</h2>
+    <p style="color: #555;">Simbol-simbol ini memudahkan komunikasi dasar, terutama untuk tunarungu dan tunanetra.</p>
+    <div class="sign-grid">
+      <div class="sign-item">
+        <img src="https://i.ytimg.com/vi/AoJT54b50Ek/maxresdefault.jpg?rs=AOn4CLA6V-vQ8LFNMsd4EYVkjd0Sur0leA&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGBMgSih_MA8%3D" alt="Makan">
+        <p><strong>Mau Makan</strong></p>
+        <p style="color: #555;">Simbol ini digunakan jika mau makan.</p>
+      </div>
+      <div class="sign-item">
+        <img src="https://i.ytimg.com/vi/aMsEAVkOwlE/maxresdefault.jpg?rs=AOn4CLDdqXftUY1JYulf0Y0sncRLFpXU6Q&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGBMgSyh_MA8%3D" alt="Minum">
+        <p><strong>Mau Minum</strong></p>
+        <p style="color: #555;">Simbol ini digunakan Untuk Mau Minum.</p>
+      </div>
+      <div class="sign-item">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.WI1Q0kPFa8dVpGTkS7cPdgHaEc&pid=Api" alt="Halo">
+        <p><strong>Halo</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk memulai percakapn atau menyapa.</p>
+      </div>
+      <div class="sign-item">
+        <img src="https://i.ytimg.com/vi/Jj7VMwVq7DM/maxresdefault.jpg" alt="Terima Kasih">
+        <p><strong>Terima Kasih</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk berterimakasih atas makanan/pelayananya.</p>
+      </div>
+      <div class="sign-item">
+        <img src="https://i.ytimg.com/vi/XHxECJPZqgY/maxresdefault.jpg" alt="Tolong">
+        <p><strong>Tolong</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk minta tolong berupa tolong ambilkan sesuatu dan lain-lain.</p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot 2025-04-20 193239.png" alt="Silakan">
+        <p><strong>Permisi</strong></p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot 2025-04-20 193402.png" alt="Toilet">
+        <p><strong>Sekarang</strong></p>
+      </div>
+      <div class="sign-item">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.7-Rt-WsFeTsEa_JphqLx8wHaE7&pid=Api" alt="Ya">
+        <p><strong>Ya</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk setuju seperti setuju memilih menu lain dan lain-lain.</p>
+      </div>
+      <div class="sign-item">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.IsLN5A0n_W_16GjQ3vIM1wHaE8&pid=Api" alt="Tidak">
+        <p><strong>Aku</strong></p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot_20-4-2025_162945_www.istockphoto.com.jpeg" alt="Tidak">
+        <p><strong>Mau Ke Toilet</strong></p>
+       simbol ini menyatakan bahwa mau ke toilet.
+      </div>
+      <div class="sign-item">
+        <img src="https://i.pinimg.com/originals/35/99/bc/3599bc5bd7ad3680b6f5d4dca8bb155b.jpg" alt="Tidak">
+        <p><strong>Nama Saya</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk perkenalan/berkenalan.</p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot_20-4-2025_165848_www.bing.com.jpeg" alt="Tidak">
+        <p><strong>Berapa?</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk menanyakan berapa? misalnya berapa totalnya atau makanan ini harganya berapa?.</p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot_20-4-2025_165837_www.bing.com.jpeg" alt="Tidak">
+        <p><strong>itu apa?</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk menanyakan contoh ikan apa itu yang di menu?/makanan apa itu?.</p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot_20-4-2025_165210_www.bing.com.jpeg" alt="Tidak">
+        <p><strong>duduk saja/silahkan duduk</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk menyatakan untuk duduk.</p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot 2025-04-20 193318.png" alt="Tidak">
+        <p><strong>Sama-Sama</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk membalas terimakasih atau respon sopan.</p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot 2025-04-20 195443.png" alt="Tidak">
+        <p><strong>buruk</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk menilai sesuatu menilai misalnya pelayanan yang buruk/makanan yang buruk.
+        </p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot_20-4-2025_16559_arliblogs.blogspot.com.jpeg" alt="Tidak">
+        <p><strong>Selamat Sore</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk salam interaksi dan juga memberitahu waktu.</p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot_20-4-2025_165446_arliblogs.blogspot.com.jpeg" alt="Tidak">
+        <p><strong>Selamat siang</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk salam interaksi dan juga memberitahu waktu.</p>
+      </div>
+      <div class="sign-item">
+        <img src="Screenshot_20-4-2025_16559_arliblogs.blogspot.com.jpeg" alt="Tidak">
+        <p><strong>selamat pagi</strong></p>
+        <p style="color: #555;">Simbol ini digunakan untuk salam interaksi dan juga memberitahu waktu.
+          <p><strong></strong></p>
+    </div>
+  </div>
+
+  <script>
+    function playVideo(link) {
+      window.open(link, '_blank');
+    }
+  </script}
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
